@@ -13,7 +13,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface  CategoryApiService {
-
+// Sending Http_request to callback the json response by GET annotation
     @GET("app.asmx/GetCategories")
     Call<categoriesResponse> GetCategories(@Query("categoryId") String categoryId, @Query("countryId") String countryId);
 

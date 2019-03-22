@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Categories {
+
+    // Categories class for store categories properties by retrofit callback to class states
+    // Serialized for store data json response callback to fields
     @SerializedName("Id")
     private String Id;
 
@@ -27,15 +30,15 @@ public class Categories {
     @SerializedName("SubCategories")
     private ArrayList<Categories> SubCategories;
 
-    public Categories(String ID, String TITLE_EN, String TITLE_AR, String PHOTO, String PRODUCT_COUNT,String HAVEMODEL,ArrayList<Categories>SUB_CAT) {
+    public Categories(String ID, String TITLE_EN, String TITLE_AR, String PHOTO, String PRODUCT_COUNT, String HAVEMODEL, ArrayList<Categories> SUB_CAT) {
 
         this.Id = ID;
         this.TitleEN = TITLE_EN;
         this.TitleAR = TITLE_AR;
         this.Photo = PHOTO;
         this.ProductCount = PRODUCT_COUNT;
-        this.HaveModel=HAVEMODEL;
-        this.SubCategories=SUB_CAT;
+        this.HaveModel = HAVEMODEL;
+        this.SubCategories = SUB_CAT;
     }
 
     public String getId() {
@@ -79,7 +82,7 @@ public class Categories {
     }
 
     public void setHaveModel(String haveModel) {
-        this.HaveModel=haveModel;
+        this.HaveModel = haveModel;
     }
 
     public String getHaveModel() {
@@ -94,13 +97,4 @@ public class Categories {
         return SubCategories;
     }
 
-/*
-    public static class MovieResult {
-        private List<Movie> results;
-
-        public List<Movie> getResult() {
-            return results;
-        }
-    }
-    */
 }

@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<categoriesResponse> GetCategories, Response<categoriesResponse> response) {
 
                 dataArrayList = response.body().getCategory();
-
-                int sz=dataArrayList.size();
-                Log.d("Res",String.valueOf(sz));
+                //Testing if response is going well or not , showing respone length by log
+                int respone_size = dataArrayList.size();
+                Log.d("Res", String.valueOf(respone_size));
 
                 GenerateCateggoryList(dataArrayList);
 
@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+
+    // passing response result to adapter to generate the layout
     private void GenerateCateggoryList(ArrayList<Categories> categoriesArrayList) {
         recyclerView = findViewById(R.id.recycler_view_notice_list);
         adapter = new CategoriesAdapter(categoriesArrayList);
